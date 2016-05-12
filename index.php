@@ -5,8 +5,6 @@
                 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
                 <title>Inserir no BD</title>
                 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-                <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
-                <script type="text/javascript" src="handler.js"></script>
                 
         </head>
         <body>
@@ -76,8 +74,10 @@
 
                         </div>
                         <br />
-                        
+
                 </div>
                 </form>
-        <body>
+                <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+                <script type="text/javascript" src="js/handler.js"></script>
+        </body>
 </html>
