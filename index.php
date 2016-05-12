@@ -4,23 +4,10 @@
         <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
                 <title>Inserir no BD</title>
-
-                <style>
-                        body{font-family:Arial;}
-                        label{font-size:16px;}
-                        select{border-bottom:3px solid #009688;width:102.5%;padding:5px 0px 5px 10px;font-size:15px;}
-                        input{font-size:15px;}
-                        input:focus{border:1px solid #009688!important;}
-                        input[type="text"]{border-radius: 2px;border: 1px #B1B1B1 solid;margin-bottom:10px;font-size:15px; padding:5px 0px 5px 10px;width:100%;}
-                        input[type="tel"]{border-radius: 2px;border: 1px #B1B1B1 solid;margin-bottom:10px;font-size:15px; padding:5px 0px 5px 10px;width:100%;}
-                        input[type="date"]{border-radius: 2px;border: 1px #B1B1B1 solid;margin-bottom:10px;font-size:15px; padding:3px 0px 3px 10px;width:100%;}
-                        input[type="submit"]{border-radius:2px;cursor:pointer;border: 0;background-color:#009688;color:#FFF;margin:10px 0px 10px 0px;font-size:16px; padding:10px 0px 10px 10px;width:30%;}
-                        .formularioTopo{width:100%!important;}
-                        .formularioTopoMeio{width:45%;}
-                        .optionClinica .optionMedico{padding:10px; margin:10px 0px 10px 0px;}
-                        .borda{width:100%;margin-top:20px;padding:7px;border-top:3px solid #009688}
-                        .oculto {display: none;}
-                </style>
+                <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+                <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+                <script type="text/javascript" src="handler.js"></script>
+                
         </head>
         <body>
                 <form class="formularioTopo" action="formulario.php" method="post" name="form" onsubmit="return formCheck(this);">
@@ -92,7 +79,5 @@
                         
                 </div>
                 </form>
-                <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
-                <script type="text/javascript" src="handler.js"></script>
         <body>
 </html>
