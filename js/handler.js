@@ -14,7 +14,17 @@ var habilitar = function() {
         }else if ($("#comoencontrou").find(":selected").val() == 3){
                 unshowElements();
                 $(".optionPaciente").removeClass("oculto");
-        }else {
+        }else if ($("#comoencontrou").find(":selected").val() == 4){
+                unshowElements();
+                $(".optionResponsavel").removeClass("oculto");
+        }else if ($("#comoencontrou").find(":selected").val() == 5){
+                unshowElements();
+                $(".optionConvenio").removeClass("oculto");
+        }else if ($("#comoencontrou").find(":selected").val() == 6){
+                unshowElements();
+                $(".optionConsulta").removeClass("oculto");
+        }
+        else {
                 unshowElements();
         }
     });
@@ -24,4 +34,7 @@ var unshowElements = function() {
 	$(".optionMedico").addClass("oculto");
 	$(".optionClinica").addClass("oculto");
 	$(".optionPaciente").addClass("oculto");
+    $(".optionResponsavel").addClass("oculto");
+    $(".optionConvenio").addClass("oculto");
+    $(".optionConsulta").addClass("oculto");
 };

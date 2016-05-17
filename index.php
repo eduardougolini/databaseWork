@@ -70,6 +70,39 @@
 
                         </div>
 
+                        <div class="optionResponsavel oculto">
+                                <label for="codResponsavel">Código Responsável:</label><br />
+                                <input type="text" name="codResponsavel" id="codResponsavel" size="5" maxlength="5" />
+                                <label for="nmResponsavel">Nome Responsável:</label><br />
+                                <input type="text" name="nmResponsavel" id="nmResponsavel" size="50" maxlength="70" />
+                                <label for="rgResponsavel">RG Responsável:</label><br />
+                                <input type="text" name="rgResponsavel" id="rgResponsavel" size="15" maxlength="15" />
+                                <label for="cpfResponsavel">CPF Responsável:</label><br />
+                                <input type="text" name="cpfResponsavel" id="cpfResponsavel" size="15" maxlength="15" />
+                                <label for="endResponsavel">Endereço Responsável:</label><br />
+                                <input type="text" name="endResponsavel" id="endResponsavel" size="50" maxlength="70" />
+                                <label for="foneResponsavel">Fone Responsável:</label><br />
+                                <input type="tel" name="foneResponsavel" id="foneResponsavel" size="15" maxlength="15" />
+                        </div>
+
+                        <div class="optionConvenio oculto">
+                                <label for="codConvenio">Código Convenio:</label><br />
+                                <input type="text" name="codConvenio" id="codConvenio" size="5" maxlength="5" />
+                                <label for="tipoConvenio">Tipo Convênio:</label><br />
+                                <input type="text" name="tipoConvenio" id="tipoConvenio" size="50" maxlength="70" />
+                                <label for="nmConvenio">Nome Convênio:</label><br />
+                                <input type="text" name="nmConvenio" id="nmConvenio" size="15" maxlength="15" />
+                        </div>
+
+                        <div class="optionConsulta oculto">
+                                <label for="codConsulta">Código Consulta:</label><br />
+                                <input type="text" name="codConsulta" id="codConsulta" size="5" maxlength="5" />
+                                <label for="dataConsulta">Tipo Convênio:</label><br />
+                                <input type="date" name="dataConsulta" id="dataConsulta" size="8" />
+                                <label for="vlConsulta">Nome Convênio:</label><br />
+                                <input type="text" name="vlConsulta" id="vlConsulta" size="15" maxlength="15" />
+                        </div>
+
                         <input type="submit" name="submit" id="submit" value="Enviar">
 
                         </div>
