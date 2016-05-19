@@ -33,8 +33,6 @@
                         </div>
 
                         <div class="optionMedico oculto">
-                                <label for="codMedico">Código Médico:</label><br />
-                                <input type="text" name="codMedico" class="codMedico" size="5" maxlength="5" />
                                 <label for="nmMedico">Nome Médico:</label><br />
                                 <input type="text" name="nmMedico" class="nmMedico" size="50" maxlength="70" />
                                 <label for="nascMedico">Data Nascimento Médico:</label><br />
@@ -47,16 +45,19 @@
                                 <input type="text" name="endMedico" class="endMedico" size="50" maxlength="70" />
                                 <label for="foneMedico">Fone Médico:</label><br />
                                 <input type="tel" name="foneMedico" class="foneMedico" size="15" maxlength="15" />
+                                <label for="clinicaMedico">Clínica do Médico:</label><br />
+                                <select name="clinicaHasMedico" class="clinicaHasMedico">
+                                        <option value="">Selecione a clínica: </option>
+                                        <option value="1">Clínica 1</option>
+                                </select>
 
                         </div>
 
                         <div class="optionPaciente oculto">
-                                <label for="codPaciente">Código Paciente:</label><br />
-                                <input type="text" name="codPaciente" class="codPaciente" size="5" maxlength="5" />
                                 <label for="nmPaciente">Nome Paciente:</label><br />
                                 <input type="text" name="nmPaciente" class="nmPaciente" size="50" maxlength="70" />
                                 <label for="nascPaciente">Data Nascimento Paciente:</label><br />
-                                <input type="date" name="nmPaciente" class="nmPaciente" size="8" />
+                                <input type="date" name="nascPaciente" class="nascPaciente" size="8" />
                                 <label for="rgPaciente">RG Paciente:</label><br />
                                 <input type="text" name="rgPaciente" class="rgPaciente" size="15" maxlength="15" />
                                 <label for="cpfPaciente">CPF Paciente:</label><br />
@@ -69,8 +70,6 @@
                         </div>
 
                         <div class="optionResponsavel oculto">
-                                <label for="codResponsavel">Código Responsável:</label><br />
-                                <input type="text" name="codResponsavel" class="codResponsavel" size="5" maxlength="5" />
                                 <label for="nmResponsavel">Nome Responsável:</label><br />
                                 <input type="text" name="nmResponsavel" class="nmResponsavel" size="50" maxlength="70" />
                                 <label for="rgResponsavel">RG Responsável:</label><br />
@@ -84,8 +83,6 @@
                         </div>
 
                         <div class="optionConvenio oculto">
-                                <label for="codConvenio">Código Convenio:</label><br />
-                                <input type="text" name="codConvenio" class="codConvenio" size="5" maxlength="5" />
                                 <label for="tipoConvenio">Tipo Convênio:</label><br />
                                 <input type="text" name="tipoConvenio" class="tipoConvenio" size="50" maxlength="70" />
                                 <label for="nmConvenio">Nome Convênio:</label><br />
@@ -93,8 +90,6 @@
                         </div>
 
                         <div class="optionConsulta oculto">
-                                <label for="codConsulta">Código Consulta:</label><br />
-                                <input type="text" name="codConsulta" class="codConsulta" size="5" maxlength="5" />
                                 <label for="dataConsulta">Tipo Convênio:</label><br />
                                 <input type="date" name="dataConsulta" class="dataConsulta" size="8" />
                                 <label for="vlConsulta">Nome Convênio:</label><br />

@@ -16,22 +16,37 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionMedico").removeClass("oculto");
                 $(".optionMedico input").attr("required", true);
+                $(".submit").on("click", function() {
+                    insertMedicoData();
+                });
         }else if ($("#comoencontrou").find(":selected").val() == 3){
                 unshowElements();
                 $(".optionPaciente").removeClass("oculto");
                 $(".optionPaciente input").attr("required", true);
+                $(".submit").on("click", function() {
+                    insertPacienteData();
+                });
         }else if ($("#comoencontrou").find(":selected").val() == 4){
                 unshowElements();
                 $(".optionResponsavel").removeClass("oculto");
                 $(".optionResponsavel input").attr("required", true);
+                $(".submit").on("click", function() {
+                    insertResponsavelData();
+                });
         }else if ($("#comoencontrou").find(":selected").val() == 5){
                 unshowElements();
                 $(".optionConvenio").removeClass("oculto");
                 $(".optionConvenio input").attr("required", true);
+                $(".submit").on("click", function() {
+                    insertConvenioData();
+                });
         }else if ($("#comoencontrou").find(":selected").val() == 6){
                 unshowElements();
                 $(".optionConsulta").removeClass("oculto");
                 $(".optionConsulta input").attr("required", true);
+                $(".submit").on("click", function() {
+                    insertConsultaData();
+                });
         }
         else {
                 unshowElements();
@@ -70,4 +85,54 @@ var insertClinicaData = function() {
     }, function() {
         console.log("deu boa!");
     });
+}
+
+var insertMedicoData = function(){
+    var nameMedico = $(".optionMedico .nmMedico").val();
+    var birthMedico = $(".optionMedico .nascMedico").val();
+    var rgMedico = $(".optionMedico .rgMedico").val();
+    var cpfMedico = $(".optionMedico .cpfMedico").val();
+    var addressMedico = $(".optionMedico .endMedico").val();
+    var foneMedico = $(".optionMedico .foneMedico").val();
+//    var clinicaMedico
+//    Adicionar insert para chaves estrangeiras
+    
+    var data = nameMedico + ", " + birthMedico + ", " + rgMedico + ", " + cpfMedico + ", " + addressMedico + ", " + foneMedico;
+    
+    $.post("src/RouteDivider.php", {
+        type: "insert",
+        table: "medico",
+        fields: "name, birth, rg, cpf, address, fone",
+        data: data
+    });
+    
+} 
+
+var insertPacienteData = function(){
+    var namePaciente = $(".optionPaciente .nmPaciente").val();
+    var birthPaciente = $(".optionPaciente .nascPaciente").val();
+    var rgPaciente = $(".optionPaciente .rgPaciente").val();
+    var cpfPaciente = $(".optionPaciete .cpfPaciente").val();
+    var addressPaciente = $(".optionPaciente .endPaciente").val();
+    var fonePaciente = $(".optionPaciente .fonePaciente").val();
+    
+    var data = namePaciente + ", " + birthPaciente + ", " + rgPaciente + ", " + cpfPaciente + ", " + addressPaciente + ", " + fonePaciente;
+    
+    $.post("src/RoutDivider.php",{
+        type: "insert",
+        table: "paciente",
+        fields: "name, birth, rg, cpf, address, fone",
+        data: data
+    });
+}
+
+var insertResponsavelData = function(){
+    var nameResponsavel = $(".optionResponsavel .nmResponsavel").val();
+    var rgResponsavel = $(".optionResponsavel .rgResponsavel").val();
+    var cpfResponsavel = $(".optionResponsavel .cpfResponsavel").val();
+    var addressResponsavel = $(".optionResponsavel .endResponsavel").val();
+    var foneResponsavel = $(".optionResponsavel . foneResponsavel").val();
+    
+    var data = nameResponsavel + ", " + rgResponsavel + ", " + cpfResponsavel + ", " + addressResponsavel + ", " + foneResponavel;
+    //terminar sabosta 
 }
