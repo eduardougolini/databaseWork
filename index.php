@@ -8,7 +8,7 @@
                 
         </head>
         <body>
-                <form class="formularioTopo" action="formulario.php" method="post" name="form" onsubmit="return formCheck(this);">
+                <form class="formularioTopo">
                 <div class="formularioTopoMeio">
                         <div class="optionEsquerda">
                                 <label for="comoencontrou">Selecione:</label><br />

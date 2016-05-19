@@ -13,6 +13,15 @@ class DatabaseConnector {
         $this->db = new mysqli("127.0.0.1", "root", "root", $dbName);
     }
     
+    public function insert($table, $fields, $data) {
+        try{
+            $query = $this->db->prepare("INSERT INTO $table ($fields) VALUES($data)");
+            $query->execute();
+        } catch (Exception $ex) {
+            throw new Exception("Deu ruim ao inserir: $ex");
+        }
+    }
+    
     public function select($table, $data, $whereFilter) {
         $results = false;
         $query = $this->db->prepare("SELECT $data FROM $table WHERE $whereFilter");
