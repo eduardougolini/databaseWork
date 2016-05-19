@@ -9,6 +9,9 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionClinica").removeClass("oculto");
                 $(".optionClinica input").attr("required", true);
+                $(".submit").on("click", function() {
+                    insertClinicaData();
+                });
         } else if ($("#comoencontrou").find(":selected").val() == 2){
                 unshowElements();
                 $(".optionMedico").removeClass("oculto");
@@ -49,4 +52,22 @@ var unshowElements = function() {
     $(".optionConvenio input").removeAttr("required");
     $(".optionConsulta").addClass("oculto");
     $(".optionConsulta input").removeAttr("required");
+    $(".submit").unbind("click");
 };
+
+var insertClinicaData = function() {
+    var nameClinica = $(".optionClinica .nmClinica").val();
+    var addressClinica = $(".optionClinica .endClinica").val();
+    var foneClinica = $(".optionClinica .foneClinica").val();
+    
+    var data = nameClinica + ", " + addressClinica + ", " + foneClinica;
+    
+    $.post("src/RouteDivider.php", {
+        type: "insert",
+        table: "clinica",
+        fields: "name, address, fone",
+        data: data
+    }, function() {
+        console.log("deu boa!");
+    });
+}

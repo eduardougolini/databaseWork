@@ -13,10 +13,13 @@ class DatabaseConnector {
         $this->db = new mysqli("127.0.0.1", "root", "root", $dbName);
     }
     
+    public function closeConnection() {
+        $this->db->close();
+    }
+    
     public function insert($table, $fields, $data) {
         try{
-            $query = $this->db->prepare("INSERT INTO $table ($fields) VALUES($data)");
-            $query->execute();
+            mysqli_query($this->db, "INSERT INTO $table ($fields) VALUES($data)");
         } catch (Exception $ex) {
             throw new Exception("Deu ruim ao inserir: $ex");
         }
@@ -34,10 +37,6 @@ class DatabaseConnector {
         }
         
         return $results;
-    }
-    
-    public function closeConnection() {
-        $this->db->close();
     }
     
 }
