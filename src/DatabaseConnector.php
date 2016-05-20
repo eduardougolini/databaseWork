@@ -25,18 +25,19 @@ class DatabaseConnector {
         }
     }
     
-    public function select($table, $data, $whereFilter) {
-        $results = false;
-        $query = $this->db->prepare("SELECT $data FROM $table WHERE $whereFilter");
-        $query->execute();
-        
-        $query->bind_result($results);
-        
-        if (! $results) {
-            throw new Exception("Deu ruim, corram para as colinas!");
+    public function select($table, $data, $whereFilter = "true") {
+        try{
+            $results = "";
+            $query =  mysqli_query($this->db, "SELECT $data FROM $table WHERE $whereFilter");
+           
+            while($row = mysql_fetch_assoc($query)) {
+                $results = $results . $row . "<br />";
+            }
+            
+            return results;
+        } catch (Exception $ex) {
+            throw new Exception("Deu ruim ao selecionar: $ex");
         }
-        
-        return $results;
     }
     
 }

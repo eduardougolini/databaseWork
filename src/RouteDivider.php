@@ -14,4 +14,10 @@ switch ($type) {
         $database->insert($table, $fields, $data);
         $database->closeConnection();
         break;
+    case "select":
+        $database = new DatabaseConnector();
+        $database->connect("clinica_db");
+        $database->select($table, $fields);
+        $database->closeConnection();
+        break;
 }

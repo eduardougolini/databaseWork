@@ -9,6 +9,7 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionClinica").removeClass("oculto");
                 $(".optionClinica input").attr("required", true);
+                selectClinicaData();
                 $(".submit").on("click", function() {
                     insertClinicaData();
                 });
@@ -16,6 +17,7 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionMedico").removeClass("oculto");
                 $(".optionMedico input").attr("required", true);
+                selectMedicoData();
                 $(".submit").on("click", function() {
                     insertMedicoData();
                 });
@@ -23,6 +25,7 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionPaciente").removeClass("oculto");
                 $(".optionPaciente input").attr("required", true);
+                selectPacienteData();
                 $(".submit").on("click", function() {
                     insertPacienteData();
                 });
@@ -30,6 +33,7 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionResponsavel").removeClass("oculto");
                 $(".optionResponsavel input").attr("required", true);
+                selectResponsavelData();
                 $(".submit").on("click", function() {
                     insertResponsavelData();
                 });
@@ -37,6 +41,7 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionConvenio").removeClass("oculto");
                 $(".optionConvenio input").attr("required", true);
+                selectConvenioData();
                 $(".submit").on("click", function() {
                     insertConvenioData();
                 });
@@ -44,6 +49,7 @@ var habilitar = function() {
                 unshowElements();
                 $(".optionConsulta").removeClass("oculto");
                 $(".optionConsulta input").attr("required", true);
+                selectConsultaData();
                 $(".submit").on("click", function() {
                     insertConsultaData();
                 });
@@ -85,7 +91,7 @@ var insertClinicaData = function() {
     }, function() {
         console.log("deu boa!");
     });
-}
+};
 
 var insertMedicoData = function(){
     var nameMedico = $(".optionMedico .nmMedico").val();
@@ -106,7 +112,7 @@ var insertMedicoData = function(){
         data: data
     });
     
-} 
+}; 
 
 var insertPacienteData = function(){
     var namePaciente = $(".optionPaciente .nmPaciente").val();
@@ -124,14 +130,14 @@ var insertPacienteData = function(){
         fields: "name, birth, rg, cpf, address, fone",
         data: data
     });
-}
+};
 
 var insertResponsavelData = function(){
     var nameResponsavel = $(".optionResponsavel .nmResponsavel").val();
     var rgResponsavel = $(".optionResponsavel .rgResponsavel").val();
     var cpfResponsavel = $(".optionResponsavel .cpfResponsavel").val();
     var addressResponsavel = $(".optionResponsavel .endResponsavel").val();
-    var foneResponsavel = $(".optionResponsavel . foneResponsavel").val();
+    var foneResponsavel = $(".optionResponsavel .foneResponsavel").val();
     
     var data = nameResponsavel + ", " + rgResponsavel + ", " + cpfResponsavel + ", " + addressResponsavel + ", " + foneResponsavel;
     
