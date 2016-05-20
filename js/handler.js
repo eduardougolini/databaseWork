@@ -133,6 +133,41 @@ var insertResponsavelData = function(){
     var addressResponsavel = $(".optionResponsavel .endResponsavel").val();
     var foneResponsavel = $(".optionResponsavel . foneResponsavel").val();
     
-    var data = nameResponsavel + ", " + rgResponsavel + ", " + cpfResponsavel + ", " + addressResponsavel + ", " + foneResponavel;
-    //terminar sabosta 
-}
+    var data = nameResponsavel + ", " + rgResponsavel + ", " + cpfResponsavel + ", " + addressResponsavel + ", " + foneResponsavel;
+    
+    $.post("src/RouteDivider.php",{
+        type: "insert",
+        table: "responsavel",
+        fields: "name, birth, rg, cpf, address, fone",
+        data: data
+    });
+};
+
+var insertConvenioData = function(){
+    var typeConvenio = $(".optionConvenio .tipoConvenio").val();
+    var nameConvenio = $(".optionConveno .nmConvenio").val();
+    
+    var data = typeConvenio + ", " + nameConvenio;
+    
+    $.post("src/RouteDivider.php",{
+        type: "insert",
+        table: "convenio",
+        fields: "type, name",
+        data: data
+    });
+};
+
+var insertConsultaData = function(){
+    var dataConsulta = $(".optionConsulta .dataConsulta").val();
+    var valueConsulta = $(".optionConsulta .vlConsulta").val();
+    
+    var data = dataConsulta + ", " + valueConsulta;
+    
+    $.post ("src/RouteDivider.php",{
+        type: "insert",
+        table: "consulta",
+        fields: "data, value",
+        data: data
+    });    
+};
+

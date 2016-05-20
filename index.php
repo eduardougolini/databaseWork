@@ -90,9 +90,9 @@
                         </div>
 
                         <div class="optionConsulta oculto">
-                                <label for="dataConsulta">Tipo Convênio:</label><br />
+                                <label for="dataConsulta">Data Consulta:</label><br />
                                 <input type="date" name="dataConsulta" class="dataConsulta" size="8" />
-                                <label for="vlConsulta">Nome Convênio:</label><br />
+                                <label for="vlConsulta">Valor Consulta:</label><br />
                                 <input type="text" name="vlConsulta" class="vlConsulta" size="15" maxlength="15" />
                         </div>
 
