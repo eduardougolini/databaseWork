@@ -81,7 +81,7 @@ var insertClinicaData = function() {
     var addressClinica = $(".optionClinica .endClinica").val();
     var foneClinica = $(".optionClinica .foneClinica").val();
     
-    var data = nameClinica + ", " + addressClinica + ", " + foneClinica;
+    var data = "'" + nameClinica + "'" + ", " + "'" + addressClinica + "'" + ", " + foneClinica;
     
     $.post("src/RouteDivider.php", {
         type: "insert",

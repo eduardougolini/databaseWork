@@ -11,30 +11,40 @@ class DatabaseConnector {
     
     public function connect($dbName) {
         $this->db = new mysqli("127.0.0.1", "root", "root", $dbName);
+        
+        if (mysqli_connect_errno()) {
+            printf("Connect failed: %s\n", mysqli_connect_error());
+            exit();
+        }
     }
     
     public function closeConnection() {
         $this->db->close();
     }
     
-    public function insert($table, $fields, $data) {
-        try{
-            mysqli_query($this->db, "INSERT INTO $table ($fields) VALUES($data)");
-        } catch (Exception $ex) {
-            throw new Exception("Deu ruim ao inserir: $ex");
-        }
+    public function insert($table, $fields, $data) {        
+       $this->db->real_query("INSERT INTO $table ($fields) VALUES($data)");
     }
     
-    public function select($table, $data, $whereFilter = "true") {
+    public function select($table, $data) {
+        $results = "";
+        
         try{
-            $results = "";
-            $query =  mysqli_query($this->db, "SELECT $data FROM $table WHERE $whereFilter");
+            $query = $this->db->query("SELECT $data FROM $table");
            
-            while($row = mysql_fetch_assoc($query)) {
-                $results = $results . $row . "<br />";
+            while($rows = $query->fetch_array(MYSQLI_ASSOC)) {
+                foreach($rows as $key => $row) {
+                    $results = $results . $key . ": " . $row . "<br />";
+
+                    if ($key === null || $row == null) {
+                        continue;
+                    }
+                }
+                
+                $results = $results . "<br /><br />";
             }
             
-            return results;
+            return $results;
         } catch (Exception $ex) {
             throw new Exception("Deu ruim ao selecionar: $ex");
         }

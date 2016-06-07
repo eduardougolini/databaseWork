@@ -52,7 +52,7 @@ var selectConsultaData = function(){
     $.post("src/RouteDivider.php",{
         type: "select",
         table: "convenio",
-        fields: "*",
+        fields: "*"
     }, function(data){
         showResults(data);
     });
@@ -60,4 +60,4 @@ var selectConsultaData = function(){
 
 var showResults = function(data){
     $("#selectResults").html(data);
-}
+};

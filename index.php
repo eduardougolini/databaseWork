@@ -96,6 +96,7 @@
                                 <input type="text" name="vlConsulta" class="vlConsulta" size="15" maxlength="15" />
                         </div>
 
+                            <a class="submit">nsodndsc</a>
                         <input type="submit" name="submit" class="submit" value="Enviar">
 
                         </div>

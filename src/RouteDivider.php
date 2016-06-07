@@ -2,10 +2,13 @@
 
 include "./DatabaseConnector.php";
 
-$type = $_POST['type'];
-$table = $_POST['table'];
-$fields = $_POST['fields'];
-$data = $_POST['data'];
+ini_set ("display_errors", "1");
+error_reporting(E_ALL);
+
+$type = isset($_POST['type']) ? $_POST['type'] : NULL;
+$table = isset($_POST['table']) ? $_POST['table'] : NULL;
+$fields = isset($_POST['fields']) ? $_POST['fields'] : NULL;
+$data = isset($_POST['data']) ? $_POST['data'] : NULL;
 
 switch ($type) {
     case "insert":
@@ -17,7 +20,8 @@ switch ($type) {
     case "select":
         $database = new DatabaseConnector();
         $database->connect("clinica_db");
-        $database->select($table, $fields);
+        $query = $database->select($table, $fields);
         $database->closeConnection();
+        echo $query;
         break;
 }
