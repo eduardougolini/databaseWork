@@ -48,7 +48,6 @@
                                 <label for="clinicaMedico">Clínica do Médico:</label><br />
                                 <select name="clinicaHasMedico" class="clinicaHasMedico">
                                         <option value="">Selecione a clínica: </option>
-                                        <option value="1">Clínica 1</option>
                                 </select>
 
                         </div>
@@ -66,9 +65,11 @@
                                 <input type="text" name="endPaciente" class="endPaciente" size="50" maxlength="70" />
                                 <label for="fonePaciente">Fone Paciente:</label><br />
                                 <input type="tel" name="fonePaciente" class="fonePaciente" size="15" maxlength="15" />
+                                <select name="clinicaHasPaciente" class="clinicaHasPaciente">
+                                    <option value="">Selecione a clínica: </option>
+                                </select>
                                 <select name="convenioId" class="convenioId">
-                                <option value="">Selecione o convênio: </option>
-                                    <option value="1">Convênio 1</option>
+                                    <option value="">Selecione o convênio: </option>
                                 </select>
 
                         </div>
@@ -84,6 +85,9 @@
                                 <input type="text" name="endResponsavel" class="endResponsavel" size="50" maxlength="70" />
                                 <label for="foneResponsavel">Fone Responsável:</label><br />
                                 <input type="tel" name="foneResponsavel" class="foneResponsavel" size="15" maxlength="15" />
+                                <select name="pacienteHasResponsavel" class="pacienteHasResponsavel">
+                                    <option value="">Selecione o paciente: </option>
+                                </select>
                         </div>
 
                         <div class="optionConvenio oculto">
@@ -98,6 +102,9 @@
                                 <input type="date" name="dataConsulta" class="dataConsulta" size="8" />
                                 <label for="vlConsulta">Valor Consulta:</label><br />
                                 <input type="text" name="vlConsulta" class="vlConsulta" size="15" maxlength="15" />
+                                <select name="pacienteHasConsulta" class="pacienteHasConsulta">
+                                    <option value="">Selecione o paciente: </option>
+                                </select>
                         </div>
                         <br /> <!-- Blasiu poarr -->
                         <a class="submit">Enviar</a>

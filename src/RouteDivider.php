@@ -24,4 +24,11 @@ switch ($type) {
         $database->closeConnection();
         echo $query;
         break;
+    case "selectIds":
+        $database = new DatabaseConnector();
+        $database->connect("clinica_db");
+        $query = $database->selectIds($table);
+        $database->closeConnection();
+        echo json_encode($query);
+        break;
 }

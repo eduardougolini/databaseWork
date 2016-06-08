@@ -59,4 +59,24 @@ class DatabaseConnector {
         }
     }
     
+    public function selectIds($table) {
+        try{
+            $query = $this->db->query("SELECT id FROM $table");
+            
+            while($rows = $query->fetch_array(MYSQLI_ASSOC)) {
+                foreach($rows as $key => $row) {
+                    $results[] = [$key => $row];
+
+                    if ($key == null || $row == null) {
+                        continue;
+                    }
+                }
+            }
+            
+            return $results;
+        } catch (Exception $ex) {
+            throw new Exception("Deu ruim ao selecionar: $ex");
+        }
+    }
+    
 }

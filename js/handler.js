@@ -18,6 +18,7 @@ var habilitar = function() {
                 $(".optionMedico").removeClass("oculto");
                 $(".optionMedico input").attr("required", true);
                 selectMedicoData();
+                getRecordIds($(".optionMedico .clinicaHasMedico"), "clinica");
                 $(".submit").on("click", function() {
                     insertMedicoData();
                 });
@@ -26,6 +27,8 @@ var habilitar = function() {
                 $(".optionPaciente").removeClass("oculto");
                 $(".optionPaciente input").attr("required", true);
                 selectPacienteData();
+                getRecordIds($(".optionPaciente .clinicaHasPaciente"), "clinica");
+                getRecordIds($(".optionPaciente .convenioId"), "convenio");
                 $(".submit").on("click", function() {
                     insertPacienteData();
                 });
@@ -34,6 +37,7 @@ var habilitar = function() {
                 $(".optionResponsavel").removeClass("oculto");
                 $(".optionResponsavel input").attr("required", true);
                 selectResponsavelData();
+                getRecordIds($(".optionResponsavel .pacienteHasResponsavel"), "paciente");
                 $(".submit").on("click", function() {
                     insertResponsavelData();
                 });
@@ -50,6 +54,7 @@ var habilitar = function() {
                 $(".optionConsulta").removeClass("oculto");
                 $(".optionConsulta input").attr("required", true);
                 selectConsultaData();
+                getRecordIds($(".optionConsulta .pacienteHasConsulta"), "paciente");
                 $(".submit").on("click", function() {
                     insertConsultaData();
                 });
@@ -185,5 +190,21 @@ var insertConsultaData = function(){
             value: valueConsulta
         }
     });    
+};
+
+var getRecordIds = function(element, table) {
+    $.post("src/RouteDivider.php",{
+        type: "selectIds",
+        table: table
+    }, function(data){
+        
+         $.each(JSON.parse(data), function(i, item) {   
+             element.append($('<option>', {
+                value: item.id,
+                text: item.id
+            }));
+            
+        });
+    });
 };
 
