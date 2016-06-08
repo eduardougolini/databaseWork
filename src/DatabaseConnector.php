@@ -1,3 +1,9 @@
+<style type="text/css">
+.tabela  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tabela td{font-family:Arial, sans-serif;font-size:14px;padding:5px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;border-top-width:1px;border-bottom-width:1px;}
+.tabela th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:5px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;border-top-width:1px;border-bottom-width:1px;}
+.tabela .tabela-pdr{vertical-align:top}
+</style>
 <?php
 
 /**
@@ -10,7 +16,7 @@ class DatabaseConnector {
     private $db;
     
     public function connect($dbName) {
-        $this->db = new mysqli("127.0.0.1", "root", "root", $dbName);
+        $this->db = new mysqli("localhost", "root", "", $dbName);
         
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_error());
@@ -38,7 +44,7 @@ class DatabaseConnector {
            
             while($rows = $query->fetch_array(MYSQLI_ASSOC)) {
                 foreach($rows as $key => $row) {
-                    $results = $results . $key . ": " . $row . "<br />";
+                    $results = $results . $key . ": " . $row . "<br/>";
 
                     if ($key === null || $row == null) {
                         continue;
