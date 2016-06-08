@@ -16,7 +16,7 @@ class DatabaseConnector {
     private $db;
     
     public function connect($dbName) {
-        $this->db = new mysqli("localhost", "root", "", $dbName);
+        $this->db = new mysqli("localhost", "root", "root", $dbName);
         
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_error());
@@ -41,12 +41,13 @@ class DatabaseConnector {
     }
     
     public function select($table, $data) {
-        $results = "<table>";
+        $results = "";
         
         try{
             $query = $this->db->query("SELECT $data FROM $table");
-           
+            
             while($rows = $query->fetch_array(MYSQLI_ASSOC)) {
+                $results = $results . "<table>";
                 foreach($rows as $key => $row) {
                     $results = $results . "<tr><td>". $key . "</td><td>" . $row . "</td></tr><br />";
 
@@ -55,7 +56,7 @@ class DatabaseConnector {
                     }
                 }
                 
-                $results = $results . "</table><br /><br />";
+                $results = $results . "</table><br />";
             }
             
             return $results;
