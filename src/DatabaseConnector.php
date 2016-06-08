@@ -21,31 +21,35 @@ class DatabaseConnector {
     public function closeConnection() {
         $this->db->close();
     }
-    
-    public function insert($table, $fields, $data) {       
-        try {
-           $this->db->real_query("INSERT INTO $table ($fields) VALUES($data)");
-        } catch (Exception $ex) {
-            echo 'deu ruim, ' .$ex->getMessage();
+
+    public function insert ($table, $data)
+    {
+        foreach ($data as $key => $value) {
+            $cols[] = "`$key`";
+            $values[] = '"'.$value.'"';
         }
+
+        $sql = 'INSERT INTO '.$table.' ('.implode(", ", $cols).') VALUES ('.implode(", ",  $values).')';
+
+        $this->db->real_query($sql);
     }
     
     public function select($table, $data) {
-        $results = "";
+        $results = "<table>";
         
         try{
             $query = $this->db->query("SELECT $data FROM $table");
            
             while($rows = $query->fetch_array(MYSQLI_ASSOC)) {
                 foreach($rows as $key => $row) {
-                    $results = $results . $key . ": " . $row . "<br />";
+                    $results = $results . "<tr><td>". $key . "</td><td>" . $row . "</td></tr><br />";
 
                     if ($key === null || $row == null) {
                         continue;
                     }
                 }
                 
-                $results = $results . "<br /><br />";
+                $results = $results . "</table><br /><br />";
             }
             
             return $results;

@@ -81,13 +81,14 @@ var insertClinicaData = function() {
     var addressClinica = $(".optionClinica .endClinica").val();
     var foneClinica = $(".optionClinica .foneClinica").val();
     
-    var data = "'" + nameClinica + "'" + ", " + "'" + addressClinica + "'" + ", " + foneClinica;
-    
     $.post("src/RouteDivider.php", {
         type: "insert",
         table: "clinica",
-        fields: "name, address, fone",
-        data: data
+        data: {
+            name: nameClinica,
+            address: addressClinica,
+            fone: foneClinica
+        }
     }, function() {
         console.log("deu boa!");
     });
@@ -100,16 +101,18 @@ var insertMedicoData = function(){
     var cpfMedico = $(".optionMedico .cpfMedico").val();
     var addressMedico = $(".optionMedico .endMedico").val();
     var foneMedico = $(".optionMedico .foneMedico").val();
-//    var clinicaMedico
-//    Adicionar insert para chaves estrangeiras
-    
-    var data = nameMedico + ", " + birthMedico + ", " + rgMedico + ", " + cpfMedico + ", " + addressMedico + ", " + foneMedico;
     
     $.post("src/RouteDivider.php", {
         type: "insert",
         table: "medico",
-        fields: "name, birth, rg, cpf, address, fone",
-        data: data
+        data: {
+            name: nameMedico,
+            birth: birthMedico,
+            rg: rgMedico,
+            cpf: cpfMedico,
+            address: addressMedico,
+            fone: foneMedico
+        }
     });
     
 }; 
@@ -122,13 +125,17 @@ var insertPacienteData = function(){
     var addressPaciente = $(".optionPaciente .endPaciente").val();
     var fonePaciente = $(".optionPaciente .fonePaciente").val();
     
-    var data = namePaciente + ", " + birthPaciente + ", " + rgPaciente + ", " + cpfPaciente + ", " + addressPaciente + ", " + fonePaciente;
-    
     $.post("src/RouteDivider.php",{
         type: "insert",
         table: "paciente",
-        fields: "name, birth, rg, cpf, address, fone",
-        data: data
+        data: {
+            name: namePaciente,
+            birth: birthPaciente,
+            rg: rgPaciente,
+            cpf: cpfPaciente,
+            address: addressPaciente,
+            fone: fonePaciente
+        }
     });
 };
 
@@ -139,27 +146,30 @@ var insertResponsavelData = function(){
     var addressResponsavel = $(".optionResponsavel .endResponsavel").val();
     var foneResponsavel = $(".optionResponsavel .foneResponsavel").val();
     
-    var data = nameResponsavel + ", " + rgResponsavel + ", " + cpfResponsavel + ", " + addressResponsavel + ", " + foneResponsavel;
-    
     $.post("src/RouteDivider.php",{
         type: "insert",
         table: "responsavel",
-        fields: "name, birth, rg, cpf, address, fone",
-        data: data
+        data: {
+            name: nameResponsavel,
+            rg: rgResponsavel,
+            cpf: cpfResponsavel,
+            address: addressResponsavel,
+            fone: foneResponsavel
+        }
     });
 };
 
 var insertConvenioData = function(){
     var typeConvenio = $(".optionConvenio .tipoConvenio").val();
-    var nameConvenio = $(".optionConveno .nmConvenio").val();
-    
-    var data = typeConvenio + ", " + nameConvenio;
+    var nameConvenio = $(".optionConvenio .nmConvenio").val();
     
     $.post("src/RouteDivider.php",{
         type: "insert",
         table: "convenio",
-        fields: "type, name",
-        data: data
+        data: {
+            type: typeConvenio,
+            name: nameConvenio
+        }
     });
 };
 
@@ -167,13 +177,13 @@ var insertConsultaData = function(){
     var dataConsulta = $(".optionConsulta .dataConsulta").val();
     var valueConsulta = $(".optionConsulta .vlConsulta").val();
     
-    var data = dataConsulta + ", " + valueConsulta;
-    
     $.post ("src/RouteDivider.php",{
         type: "insert",
         table: "consulta",
-        fields: "data, value",
-        data: data
+        data: {
+            date: dataConsulta,
+            value: valueConsulta
+        }
     });    
 };
 

@@ -14,7 +14,7 @@ switch ($type) {
     case "insert":
         $database = new DatabaseConnector();
         $database->connect("clinica_db");
-        $database->insert($table, $fields, $data);
+        $database->insert($table, $data);
         $database->closeConnection();
         break;
     case "select":

@@ -66,6 +66,10 @@
                                 <input type="text" name="endPaciente" class="endPaciente" size="50" maxlength="70" />
                                 <label for="fonePaciente">Fone Paciente:</label><br />
                                 <input type="tel" name="fonePaciente" class="fonePaciente" size="15" maxlength="15" />
+                                <select name="convenioId" class="convenioId">
+                                <option value="">Selecione o convênio: </option>
+                                    <option value="1">Convênio 1</option>
+                                </select>
 
                         </div>
 
