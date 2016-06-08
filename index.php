@@ -95,9 +95,8 @@
                                 <label for="vlConsulta">Valor Consulta:</label><br />
                                 <input type="text" name="vlConsulta" class="vlConsulta" size="15" maxlength="15" />
                         </div>
-
-                            <a class="submit">nsodndsc</a>
-                        <input type="submit" name="submit" class="submit" value="Enviar">
+                        <br /> <!-- Blasiu poarr -->
+                        <a class="submit">Enviar</a>
 
                         </div>
                         <br />

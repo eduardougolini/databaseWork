@@ -124,7 +124,7 @@ var insertPacienteData = function(){
     
     var data = namePaciente + ", " + birthPaciente + ", " + rgPaciente + ", " + cpfPaciente + ", " + addressPaciente + ", " + fonePaciente;
     
-    $.post("src/RoutDivider.php",{
+    $.post("src/RouteDivider.php",{
         type: "insert",
         table: "paciente",
         fields: "name, birth, rg, cpf, address, fone",

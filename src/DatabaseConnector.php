@@ -22,8 +22,12 @@ class DatabaseConnector {
         $this->db->close();
     }
     
-    public function insert($table, $fields, $data) {        
-       $this->db->real_query("INSERT INTO $table ($fields) VALUES($data)");
+    public function insert($table, $fields, $data) {       
+        try {
+           $this->db->real_query("INSERT INTO $table ($fields) VALUES($data)");
+        } catch (Exception $ex) {
+            echo 'deu ruim, ' .$ex->getMessage();
+        }
     }
     
     public function select($table, $data) {
