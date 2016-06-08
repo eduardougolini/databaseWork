@@ -82,6 +82,20 @@ input[type="date"] {
 .oculto {
     display: none;
 }
+
+.tabela  {
+    border-collapse:collapse;border-spacing:0;border-color:#ccc;
+}
+.tabela td{
+    font-family:Arial, sans-serif;font-size:14px;padding:5px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;border-top-width:1px;border-bottom-width:1px;
+}
+.tabela th{
+    font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:5px 20px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;border-top-width:1px;border-bottom-width:1px;
+}
+.tabela .tabela-pdr{
+    vertical-align:top
+}
+
 @media only screen and(max-width:480px){
     input[type="text"]{
         width:100%!important;
