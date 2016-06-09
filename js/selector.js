@@ -61,3 +61,7 @@ var selectConsultaData = function(){
 var showResults = function(data){
     $("#selectResults").html(data);
 };
+
+function refresharTela() {
+    location.reload();
+}

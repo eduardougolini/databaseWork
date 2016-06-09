@@ -10,7 +10,7 @@ class DatabaseConnector {
     private $db;
     
     public function connect($dbName) {
-        $this->db = new mysqli("localhost", "root", "root", $dbName);
+        $this->db = new mysqli("localhost", "root", "", $dbName);
         
         if (mysqli_connect_errno()) {
             printf("Connect failed: %s\n", mysqli_connect_error());
@@ -36,15 +36,18 @@ class DatabaseConnector {
     
     public function select($table, $data) {
         $results = "";
-        
+        echo "<div class='titulo-h1' style='margin-top:20px!important'>Saída </div>";
         try{
             $query = $this->db->query("SELECT $data FROM $table");
             
             while($rows = $query->fetch_array(MYSQLI_ASSOC)) {
-                $results = $results . "<table>";
+                $results = $results . "<table class='tabela'>";
                 foreach($rows as $key => $row) {
-                    $results = $results . "<tr><td>". $key . "</td><td>" . $row . "</td></tr><br />";
-
+                    $results = $results . "
+                    <tr class='tabela-pdr'>
+                        <th class='tabela-pdr'>". $key . "</th>
+                        <td class='tabela-pdr'>" . $row . "</td>
+                    </tr>";
                     if ($key === null || $row == null) {
                         continue;
                     }

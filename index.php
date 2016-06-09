@@ -8,6 +8,7 @@
                 
         </head>
         <body>
+            <div class="titulo-h1">Entrada</div>
                 <form class="formularioTopo">
                 <div class="formularioTopoMeio">
                         <div class="optionEsquerda">
@@ -107,7 +108,7 @@
                                 </select>
                         </div>
                         <br /> <!-- Blasiu poarr -->
-                        <a class="submit">Enviar</a>
+                        <a class="submit" onclick="refresharTela()">Enviar</a>
 
                         </div>
                         <br />
